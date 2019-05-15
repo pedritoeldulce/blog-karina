@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="La maravillosa experiencia de convertirse en Madre">
+    <title>Blog de una mamá</title>
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+</head>
+<body>
+<header>
+    <div class="page-header">
+        <h1 id="header-blog">Bienvenidos a mi vida como Mamá</h1>
+    </div>
+</header>
+<div id="wraper">
+    <div class="fotografia">
+        <img class="foto"  src="{% static 'img/baby.jpg' %}" alt="foto de baby">
+    </div>
+</div>
+<nav>
+    <div class="nav-wraper">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre Mi</a></li>
+            <li><a href="#">Estilo de Vida</a></li>
+            <li><a href="#">Familia</a></li>
+            <li><a href="#">Viajes</a></li>
+        </ul>
+    </div>
+</nav>
+{% for post in posts %}
+<div class="post">
+    <p>published: {{post.published_date}}</p>
+    <h2>{{post.title}}</h2>
+    <p>{{post.text}}</p>
+
+</div>
+{% endfor%}
+<footer>Paolo Perez Ttito</footer>
+</body>
+</html>
