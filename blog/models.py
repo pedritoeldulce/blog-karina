@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 # Create your models here.
 
+
 class Post(models.Model):
     #STATUS = (('draft', 'DRAFT'), ('published', 'Published'))
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
